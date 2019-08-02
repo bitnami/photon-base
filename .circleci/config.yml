@@ -5,9 +5,9 @@ jobs:
     docker:
       - image: docker:18.06.2-ce-git
         environment:
-          RELEASE_SERIES_LIST: "7"
-          LATEST_STABLE: "7"
-          IMAGE_NAME: oraclelinux-extras
+          RELEASE_SERIES_LIST: "3"
+          LATEST_STABLE: "3"
+          IMAGE_NAME: photon-base
           IS_BASE_IMAGE: 1
           DOCKER_PROJECT: bitnami
           QUAY_PROJECT: bitnami
