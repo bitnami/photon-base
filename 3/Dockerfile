@@ -6,7 +6,7 @@ COPY rootfs /
 
 RUN tdnf remove toybox -y && \
     tdnf upgrade -y && \
-    install_packages tar gzip sudo procps-ng libaio-devel which shadow sed
+    install_packages tar gzip sudo procps-ng libaio-devel which shadow sed find
 
 RUN useradd -ms /bin/bash bitnami && groupadd bitnami && usermod -g bitnami bitnami && \
     mkdir -p /opt/bitnami && chown bitnami:bitnami /opt/bitnami && \
@@ -18,6 +18,6 @@ RUN useradd -ms /bin/bash bitnami && groupadd bitnami && usermod -g bitnami bitn
 RUN sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS    90/' /etc/login.defs && \
     sed -i 's/^PASS_MIN_DAYS.*/PASS_MIN_DAYS    1/' /etc/login.defs
 
-ENV BITNAMI_IMAGE_VERSION=3-r0
+ENV BITNAMI_IMAGE_VERSION=3-r1
 
 ENTRYPOINT ["/entrypoint.sh"]
