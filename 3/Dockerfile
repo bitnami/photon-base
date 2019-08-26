@@ -18,6 +18,6 @@ RUN useradd -ms /bin/bash bitnami && groupadd bitnami && usermod -g bitnami bitn
 RUN sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS    90/' /etc/login.defs && \
     sed -i 's/^PASS_MIN_DAYS.*/PASS_MIN_DAYS    1/' /etc/login.defs
 
-ENV BITNAMI_IMAGE_VERSION=3-r22
+ENV BITNAMI_IMAGE_VERSION=3-r23
 
 ENTRYPOINT ["/entrypoint.sh"]
