@@ -6,7 +6,7 @@ COPY rootfs /
 
 RUN tdnf remove toybox -y && \
     tdnf upgrade -y && \
-    install_packages tar gzip sudo procps-ng libaio-devel which shadow sed findutils
+    install_packages tar gzip sudo procps-ng libaio-devel which shadow sed findutils gawk
 
 RUN useradd -ms /bin/bash bitnami && groupadd bitnami && usermod -g bitnami bitnami && \
     mkdir -p /opt/bitnami && chown bitnami:bitnami /opt/bitnami && \
